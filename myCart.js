@@ -1,7 +1,9 @@
 // Ex 2 - remove any item from navbar with less than minStock in stock
 // write out both the name and the number in stock in format apple:2
 function NavBar({ menuitems, minstock }) {
-    const updatedList = menuitems.map((item, index) => {
+    let inStock = menuitems.filter(inventory => inventory.instock >= minstock)
+    console.log(inStock)
+    let updatedList = inStock.map((item, index) => {
       return <li key={index}>{item.name}</li>;
     });
     
